@@ -4,9 +4,9 @@ years_list = [2004,2005,2006,2007,2008]
 print("Years list ", years_list)
 
 
-print(f"First Birthday is in years_list[1]")
+print(f"First Birthday is in {years_list[1]}") # Varibales need to be put in flower braces. AP. 
 
-print(f"Oldest  Birthday from list is years_list[4]")
+print(f"Oldest  Birthday from list is {years_list[4]}") # Variables need to be put in flower braces. AP. 
 
 
 
