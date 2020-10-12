@@ -1,0 +1,161 @@
+even_numbers = [ num 
+for num in range(10)
+ if num % 2 == 0 ]
+print(even_numbers)
+testting ex_10_evens.py
+[0, 2, 4, 6, 8]
+
+
+start1 = ["fee", "fie", "foe"]
+rhymes = [
+    ("flop", "get a mop"),
+    ("fope", "turn the rope"),
+    ("fa", "get your ma"),
+    ("fudge", "call the judge"),
+    ("fat", "pet the cat"),
+    ("fog", "walk the dog"),
+    ("fun", "say we're done"),
+    ]
+start2 = "Someone better"
+for (first, second) in rhymes:
+    try : 
+        print(
+            " ".join([ string.upper() + 
+        "!" for string in start1 ]) + 
+        " " + first.upper() + "!")
+        print(start2 + " " + second + "."
+        )
+    except: 
+        print("Error")
+testting ex_7_11_tuple.py
+FEE! FIE! FOE! FLOP!
+Someone better get a mop.
+FEE! FIE! FOE! FOPE!
+Someone better turn the rope.
+FEE! FIE! FOE! FA!
+Someone better get your ma.
+FEE! FIE! FOE! FUDGE!
+Someone better call the judge.
+FEE! FIE! FOE! FAT!
+Someone better pet the cat.
+FEE! FIE! FOE! FOG!
+Someone better walk the dog.
+FEE! FIE! FOE! FUN!
+Someone better say we're done.
+
+
+
+# Creating a list starting with the year of your birth
+years_list = [2004,2005,2006,2007,2008]
+print("Years list ", years_list)
+
+print(f"First Birthday is in {years_list[1]}") # Varibales need to be put in flower braces. AP. 
+
+print(f"Oldest  Birthday from list is {years_list[4]}") # Variables need to be put in flower braces. AP. 
+
+testting ex_7_123_years_list.py
+Years list  [2004, 2005, 2006, 2007, 2008]
+First Birthday is in 2005
+Oldest  Birthday from list is 2008
+
+
+
+things = ["mozzarella", "cinderella", "salmonella"]
+things_using_for_loop = []
+for thing in things:
+    if thing == "cinderella":
+        things_using_for_loop.append(thing.upper())
+    else: 
+        things_using_for_loop.append(thing)
+
+print(" Things in upper case using for loop ", things_using_for_loop)
+
+things_using_list_comprehension = [thing.upper() 
+if thing == "cinderella"
+ else thing for thing in things  ]
+print(things_using_list_comprehension)
+
+things_cheesy_using_for_loop = []
+for thing in things:
+    if thing == "mozzarella":
+        things_cheesy_using_for_loop.append(thing.upper())
+    else: 
+        things_cheesy_using_for_loop.append(thing)
+
+print("Cheesy elements in upper case using for loop ", things_cheesy_using_for_loop)
+
+things_cheesy_using_list_comprehension = [thing.upper()
+ if thing == "mozzarella" 
+ else thing for thing in things  ]
+print("Cheesy elements using list compreshension using for comprehsension", things_cheesy_using_for_loop)
+
+things.remove("salmonella")
+print("I won the Nobel Prize ", things)
+
+testting ex_7_4567_things.py
+ Things in upper case using for loop  ['mozzarella', 'CINDERELLA', 'salmonella']
+['mozzarella', 'CINDERELLA', 'salmonella']
+Cheesy elements in upper case using for loop  ['MOZZARELLA', 'cinderella', 'salmonella']
+Cheesy elements using list compreshension using for comprehsension ['MOZZARELLA', 'cinderella', 'salmonella']
+I won the Nobel Prize  ['mozzarella', 'cinderella']
+
+
+surpirses = ["Groucho", "Chico", "Harpo"]
+
+surpirses[2] = surpirses[2].lower()[::-1].upper()
+print(surpirses)
+
+testting ex_7_89_things.py
+['Groucho', 'Chico', 'OPRAH']
+
+
+def plus_minus(list):
+    if len(list) == 0: 
+        return 0
+    sum = list[0]
+    try: 
+        for i in range(1, len(list)):
+            if i % 2 == 1:
+                sum += list[i]
+            else: 
+                sum -= list[i]
+        return sum
+    except: 
+        return(" Error : Check the list of numbers that have been passed the test ")
+
+odd_even_sum=plus_minus([10, 20, 30, 40, 50, 60])
+print(odd_even_sum)
+
+odd_even_sum=plus_minus([])
+print(odd_even_sum)
+
+odd_even_sum=plus_minus("abc")
+print(odd_even_sum)testting ex_plus_minus.py
+50
+0
+ Error : Check the list of numbers that have been passed the test 
+
+
+def sum_even_odd_numbers(list):
+    even_indexed_sum = 0
+    odd_indexed_sum = 0
+    for i in range(len(list)):
+        if i %2 == 0:
+            even_indexed_sum += list[i]
+        else: 
+            odd_indexed_sum += list[i] 
+    return (even_indexed_sum, odd_indexed_sum)  
+
+print(sum_even_odd_numbers([10, 20, 30, 40, 50, 60,70]))  testting sum_even_odd_numbers.py
+(160, 120)
+
+
+
+def my_zip(iterable1, iterable2):
+    tuple_list = []
+    for i in range(0, len(iterable1)):
+        tuple_list.append((iterable1[i], iterable2[i]))
+    return tuple_list
+
+print(my_zip([10,20,30], 'abc')) testting zip_function.py
+[(10, 'a'), (20, 'b'), (30, 'c')]
